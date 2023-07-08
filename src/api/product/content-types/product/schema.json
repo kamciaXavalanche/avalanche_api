@@ -13,16 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
-    },
-    "brand": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
+      "type": "string",
+      "required": true
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "discount": {
       "type": "integer"
@@ -36,7 +32,7 @@
     "images": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -45,7 +41,8 @@
       ]
     },
     "sizes": {
-      "type": "json"
+      "type": "json",
+      "required": true
     },
     "subcategories": {
       "type": "relation",
@@ -55,7 +52,16 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "color": {
+      "type": "json",
+      "required": true
     }
   }
 }
