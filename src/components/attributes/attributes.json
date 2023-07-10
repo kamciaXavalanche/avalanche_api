@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_attributes_attributes",
+  "info": {
+    "displayName": "attributes",
+    "icon": ""
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "stock": {
+      "type": "integer"
+    }
+  }
+}

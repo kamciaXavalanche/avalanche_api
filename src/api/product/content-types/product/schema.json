@@ -29,9 +29,9 @@
       "target": "api::category.category",
       "mappedBy": "products"
     },
-    "images": {
+    "coverImage": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images",
@@ -62,6 +62,12 @@
     "color": {
       "type": "json",
       "required": true
+    },
+    "productAttributes": {
+      "displayName": "productAttributes",
+      "type": "component",
+      "repeatable": true,
+      "component": "attributes.product-attributes"
     }
   }
 }

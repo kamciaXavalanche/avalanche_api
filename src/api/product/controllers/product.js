@@ -1,8 +1,8 @@
 "use strict";
 
-/**
- * product controller
- */
+// /**
+//  * product controller
+//  */
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
@@ -17,10 +17,13 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
     const entity = await strapi.db.query("api::product.product").findOne({
       where: { slug: id },
       populate: {
-        images: true,
-        subcategories: true,
         categories: true,
-        colors: true,
+        subCategories: true,
+        productAttributes: {
+          populate: {
+            images: true,
+          },
+        },
       },
     });
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
