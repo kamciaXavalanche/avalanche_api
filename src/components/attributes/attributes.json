@@ -2,7 +2,8 @@
   "collectionName": "components_attributes_attributes",
   "info": {
     "displayName": "attributes",
-    "icon": ""
+    "icon": "",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,18 +12,24 @@
       "required": true
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     },
     "stock": {
       "type": "integer"
+    },
+    "availability": {
+      "displayName": "stock",
+      "type": "component",
+      "repeatable": true,
+      "component": "stock.stock"
     }
   }
 }

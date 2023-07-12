@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_stock_stocks",
+  "info": {
+    "displayName": "stock",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  }
+}

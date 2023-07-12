@@ -29,15 +29,12 @@
       "target": "api::category.category",
       "mappedBy": "products"
     },
-    "coverImage": {
+    "coverImages": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "sizes": {

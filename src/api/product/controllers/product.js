@@ -18,10 +18,11 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
       where: { slug: id },
       populate: {
         categories: true,
-        subCategories: true,
+        subcategories: true,
         productAttributes: {
           populate: {
             images: true,
+            availability: true,
           },
         },
       },

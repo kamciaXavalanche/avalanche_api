@@ -1,7 +1,8 @@
 {
   "collectionName": "components_attributes_product_attributes",
   "info": {
-    "displayName": "productAttributes"
+    "displayName": "productAttributes",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,14 +11,15 @@
       "required": true
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "stock": {
       "type": "integer"
@@ -25,6 +27,11 @@
     "sizes": {
       "type": "json",
       "required": true
+    },
+    "availability": {
+      "type": "component",
+      "repeatable": true,
+      "component": "stock.stock"
     }
   }
 }
