@@ -37,10 +37,6 @@
         "images"
       ]
     },
-    "sizes": {
-      "type": "json",
-      "required": true
-    },
     "subcategories": {
       "type": "relation",
       "relation": "manyToMany",
@@ -54,10 +50,6 @@
     },
     "description": {
       "type": "richtext",
-      "required": true
-    },
-    "color": {
-      "type": "json",
       "required": true
     },
     "productAttributes": {

@@ -21,13 +21,6 @@
         "audios"
       ]
     },
-    "stock": {
-      "type": "integer"
-    },
-    "sizes": {
-      "type": "json",
-      "required": true
-    },
     "availability": {
       "type": "component",
       "repeatable": true,
