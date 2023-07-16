@@ -25,6 +25,12 @@
       "type": "component",
       "repeatable": true,
       "component": "stock.stock"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "integer"
     }
   }
 }

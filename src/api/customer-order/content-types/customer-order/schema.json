@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customer_orders",
+  "info": {
+    "singularName": "customer-order",
+    "pluralName": "customer-orders",
+    "displayName": "customerOrder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "totalPrice": {
+      "type": "decimal"
+    },
+    "products": {
+      "type": "json"
+    },
+    "customerData": {
+      "type": "json"
+    }
+  }
+}

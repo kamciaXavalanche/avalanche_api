@@ -21,7 +21,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
       currency: "pln",
       payment_method_types: ["card", "blik", "paypal", "p24"],
     });
-
+    console.log("payment intend", paymentIntent.client_secret);
     ctx.send({
       clientSecret: paymentIntent.client_secret,
     });

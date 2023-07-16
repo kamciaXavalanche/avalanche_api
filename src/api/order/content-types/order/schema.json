@@ -17,6 +17,9 @@
     },
     "products": {
       "type": "json"
+    },
+    "amount": {
+      "type": "decimal"
     }
   }
 }
