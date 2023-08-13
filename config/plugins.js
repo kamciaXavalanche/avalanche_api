@@ -1,5 +1,23 @@
 module.exports = ({ env }) => ({
-  // ...
+  email: {
+    config: {
+      provider: "nodemailer",
+      providerOptions: {
+        service: "iCloud",
+        host: env("SMTP_HOST", "smtp.example.com"),
+        port: env("SMTP_PORT", 587),
+        auth: {
+          user: "sklep@levarde.com",
+          pass: "Niewiem1223",
+        },
+        // ... any custom nodemailer options
+      },
+    },
+    settings: {
+      defaultFrom: "sklep@levarde.com",
+      defaultReplyTo: "sklep@levarde.com ",
+    },
+  },
   upload: {
     config: {
       provider: "cloudinary",

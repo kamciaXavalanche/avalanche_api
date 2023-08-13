@@ -7,7 +7,6 @@ const calculateOrderAmount = (total) => {
   // Replace this constant with a calculation of the order's amount
   // Calculate the order total on the server to prevent
   // people from directly manipulating the amount on the client
-  console.log(total);
   return total;
 };
 
@@ -21,9 +20,19 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
       currency: "pln",
       payment_method_types: ["card", "blik", "paypal", "p24"],
     });
+
+    const orderData = {
+      total,
+      // other order data,
+      paymentIntentId: paymentIntent.id, // Store the payment intent ID for future reference
+    };
+
+    const savedOrder = await strapi.query("order").create(orderData);
+
     console.log("payment intend", paymentIntent.client_secret);
     ctx.send({
       clientSecret: paymentIntent.client_secret,
+      order: savedOrder,
     });
   },
 }));
