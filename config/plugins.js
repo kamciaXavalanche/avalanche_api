@@ -3,7 +3,7 @@ module.exports = ({ env }) => ({
     config: {
       provider: "nodemailer",
       providerOptions: {
-        service: "iCloud",
+        // service: "iCloud",
         host: env("SMTP_HOST", "smtp.example.com"),
         port: env("SMTP_PORT", 587),
         auth: {
