@@ -1,18 +1,20 @@
 module.exports = ({ env }) => ({
   email: {
-    provider: "nodemailer",
-    providerOptions: {
-      host: "smtp.mail.me.com",
-      port: 587,
-      auth: {
-        user: "sklep@levarde.com",
-        pass: "Niewiem1223",
+    config: {
+      provider: "nodemailer",
+      providerOptions: {
+        host: "smtp.mail.me.com",
+        port: 587,
+        auth: {
+          user: "sklep@levarde.com",
+          pass: "Niewiem1223",
+        },
+        // ... any custom nodemailer options
       },
-      // ... any custom nodemailer options
-    },
-    settings: {
-      defaultFrom: "sklep@levarde.com",
-      defaultReplyTo: "sklep@levarde.com",
+      settings: {
+        defaultFrom: "sklep@levarde.com",
+        defaultReplyTo: "sklep@levarde.com",
+      },
     },
   },
   upload: {
