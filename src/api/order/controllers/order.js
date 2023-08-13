@@ -21,18 +21,9 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
       payment_method_types: ["card", "blik", "paypal", "p24"],
     });
 
-    const orderData = {
-      total,
-      // other order data,
-      paymentIntentId: paymentIntent.id, // Store the payment intent ID for future reference
-    };
-
-    const savedOrder = await strapi.query("order").create(orderData);
-
     console.log("payment intend", paymentIntent.client_secret);
     ctx.send({
       clientSecret: paymentIntent.client_secret,
-      order: savedOrder,
     });
   },
 }));
