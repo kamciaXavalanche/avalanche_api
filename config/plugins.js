@@ -6,14 +6,14 @@ module.exports = ({ env }) => ({
         host: "smtp.mail.me.com",
         port: 587,
         auth: {
-          user: "sklep@levarde.com",
-          pass: "Niewiem1223",
+          user: "kamcia_x@icloud.com",
+          pass: "xoit-vail-vxqw-dsvb",
         },
         // ... any custom nodemailer options
       },
       settings: {
-        defaultFrom: "sklep@levarde.com",
-        defaultReplyTo: "sklep@levarde.com",
+        defaultFrom: "kamcia_x@icloud.com",
+        defaultReplyTo: "kamcia_x@icloud.com",
       },
     },
   },
