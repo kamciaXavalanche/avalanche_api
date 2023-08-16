@@ -20,6 +20,16 @@
     },
     "customerData": {
       "type": "json"
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "not-paid",
+        "successful",
+        "failed"
+      ],
+      "default": "not-paid",
+      "required": true
     }
   }
 }
