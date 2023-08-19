@@ -1,14 +1,19 @@
-module.export = {
-  async afterCreate() {
+module.exports = {
+  async afterCreate(event) {
+    const { result } = event;
+
     try {
-      await strapi.plugins["email"].services.email.send({
-        to: "konr.jankowski@gmail.com",
+      await strapi.plugin("email").service("email").send({
+        to: result.emailUser,
         from: "sklep@levarde.com",
         subject: "KOD RABATOWY",
-        text: `Dziękujemy za subskyrpcje kod rabatowy to LIPEC22`,
+        text: "KOD RABATOWY",
+        html: `<h4>Dziękujemy za zapisanie do newslettera! Oto kod rabatowy: LATO23</h4>`,
       });
-    } catch (error) {
-      console.log(error);
+      console.log("Success sending e-mail");
+      console.log(result);
+    } catch (err) {
+      console.error("Error sending e-mail:", err);
     }
   },
 };

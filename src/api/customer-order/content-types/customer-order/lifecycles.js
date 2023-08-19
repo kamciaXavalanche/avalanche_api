@@ -42,10 +42,17 @@ module.exports = {
         .send({
           to: result.customerData[0].email,
           from: "sklep@levarde.com",
-          subject: "Hello world",
-          text: "Hello world",
+          subject: "Potwierdzenie zamówienia",
+          text: "Potwierdzenie zamówienia",
           html: `<h4>Order successfully created! Thank you, ${result.customerData[0].firstname}! You ordered ${result.products[0].slug}</h4>`,
         });
+      await strapi.plugin("email").service("email").send({
+        to: "sklep@levarde.com",
+        from: "sklep@levarde.com",
+        subject: "Nowe zamówienie",
+        text: "Nowe zamówienie zostało złożone.",
+        html: `<h4>Nowe zamówienie zostało złożone.</h4>`,
+      });
     } catch (err) {}
   },
 };
