@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoice_numbers",
+  "info": {
+    "singularName": "invoice-number",
+    "pluralName": "invoice-numbers",
+    "displayName": "InvoiceNumber"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "invoiceNumber": {
+      "type": "integer",
+      "default": 1
+    }
+  }
+}
