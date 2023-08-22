@@ -30,8 +30,9 @@ module.exports = {
         .toUpperCase()}${product.slug.replace(/-/g, " ").slice(1)} ${
         product.size
       }`,
-      "tax-rate": 0,
+      "tax-rate": 23,
       price: parseFloat(product.price.replace(" zł", "").replace(",", ".")),
+      test: "Pole testowe",
     }));
 
     const dateObject = new Date(result.createdAt);
@@ -115,6 +116,7 @@ module.exports = {
         products: "Produkty", // Defaults to 'Products'
         quantity: "Ilość", // Default to 'Quantity'
         price: "Cena", // Defaults to 'Price'
+        test: "testujemy",
         "product-total": "Łącznie", // Defaults to 'Total'
         total: "Całość", // Defaults to 'Total'
         vat: "", // Defaults to 'vat'
@@ -146,7 +148,7 @@ module.exports = {
           .plugin("email")
           .service("email")
           .send({
-            to: "sklep@levarde.com",
+            // to: "sklep@levarde.com",
             from: "sklep@levarde.com",
             subject: "Nowe zamówienie",
             text: "Nowe zamówienie zostało złożone.",
