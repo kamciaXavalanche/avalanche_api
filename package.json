@@ -23,6 +23,7 @@
     "fs-extra": "^11.1.1",
     "jspdf-invoice-template-nodejs": "^1.4.30",
     "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^3.9.179",
     "pg": "^8.11.1",
     "strapi-plugin-populate-deep": "^2.0.0",
     "stripe": "^12.11.0"
