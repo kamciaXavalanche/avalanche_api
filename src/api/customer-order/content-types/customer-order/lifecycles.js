@@ -52,7 +52,7 @@ module.exports = {
       },
       images: {
         // The logo on top of your invoice
-        // logo: "https://public.easyinvoice.cloud/img/logo_en_original.png",
+        logo: "https://res.cloudinary.com/dmszph456/image/upload/v1693669725/logo_1_b3f250aceb_1_817b22c889.png",
         // The invoice background
         background: "https://public.easyinvoice.cloud/img/watermark-draft.jpg",
       },
