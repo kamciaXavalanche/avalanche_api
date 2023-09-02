@@ -26,10 +26,21 @@
       "enum": [
         "not-paid",
         "successful",
-        "failed"
+        "failed",
+        "cash-on-delivery"
       ],
       "default": "not-paid",
       "required": true
+    },
+    "stripePaymentIntentId": {
+      "type": "string",
+      "unique": true,
+      "required": false
+    },
+    "isStripeVerified": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }
