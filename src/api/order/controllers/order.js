@@ -1,7 +1,5 @@
 ("use strict");
-const stripe = require("stripe")(
-  "sk_test_51KsNPHD2JGtC3oa6rGcps0s4R3JtrgMLO1rZy9KRyWZbKXu2i4LvX06vurhoUj8q1IxVyzl2vNz0dLhgjn4g3gGa00bxFqE5YK"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const calculateOrderAmount = (total) => {
   // Replace this constant with a calculation of the order's amount
