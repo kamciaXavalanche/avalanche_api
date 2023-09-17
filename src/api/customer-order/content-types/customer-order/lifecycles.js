@@ -4,6 +4,9 @@ module.exports = {
   async afterCreate(event) {
     const { result } = event;
 
+        console.log(result.orderStatus);
+
+
     const entries = await strapi.db
       .query("api::invoice-number.invoice-number")
       .findMany({});
