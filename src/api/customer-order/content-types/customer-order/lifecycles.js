@@ -124,6 +124,8 @@ module.exports = {
     easyinvoice.createInvoice(data, async function (essa) {
       //The response will contain a base64 encoded PDF file
 
+      console.log(result);
+
       try {
         if (result.orderStatus === "successful") {
           await strapi
@@ -143,25 +145,37 @@ module.exports = {
                 },
               ],
             });
-        }
-        await strapi
-          .plugin("email")
-          .service("email")
-          .send({
-            to: "sklep@levarde.com",
-            from: "sklep@levarde.com",
-            subject: "Nowe zamówienie",
-            text: "Ktoś złożył zamówienie",
-            html: `<h4>Nowe zamówienie zostało złożone.</h4>
+          await strapi
+            .plugin("email")
+            .service("email")
+            .send({
+              to: "konr.jankowski@gmail.com",
+              from: "sklep@levarde.com",
+              subject: "Nowe zamówienie",
+              text: "Ktoś złożył zamówienie",
+              html: `<h4>Nowe zamówienie zostało złożone.</h4>
            <p>Kliknij <a href="https://avalanche-l8v0.onrender.com/admin/content-manager">tutaj</a>, aby przejść do panelu admina.</p>`,
-            attachments: [
-              {
-                filename: "faktura.pdf",
-                content: Buffer.from(essa.pdf, "base64"),
-                contentType: "application/pdf",
-              },
-            ],
-          });
+              attachments: [
+                {
+                  filename: "faktura.pdf",
+                  content: Buffer.from(essa.pdf, "base64"),
+                  contentType: "application/pdf",
+                },
+              ],
+            });
+        } else {
+          await strapi
+            .plugin("email")
+            .service("email")
+            .send({
+              to: "konr.jankowski@gmail.com",
+              from: "sklep@levarde.com",
+              subject: "Nowe zamówienie",
+              text: `Nowe zamówienie o statusie ${result.orderStatus} `,
+              html: `<h4>Nowe zamówienie zostało złożone.</h4>
+           <p>Kliknij <a href="https://avalanche-l8v0.onrender.com/admin/content-manager">tutaj</a>, aby przejść do panelu admina.</p>`,
+            });
+        }
       } catch (err) {
         console.error("Error sending e-mail:", err);
       }
