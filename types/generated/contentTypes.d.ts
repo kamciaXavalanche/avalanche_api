@@ -959,9 +959,24 @@ export interface ApiSliderImageSliderImage extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    ImagesXL: Attribute.Media;
-    ImagesSM: Attribute.Media;
+    ImagesXL: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImagesSM: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -977,6 +992,12 @@ export interface ApiSliderImageSliderImage extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::slider-image.slider-image',
+      'oneToMany',
+      'api::slider-image.slider-image'
+    >;
+    locale: Attribute.String;
   };
 }
 
