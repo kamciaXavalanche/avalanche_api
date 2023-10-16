@@ -26,7 +26,8 @@
       "enum": [
         "not-paid",
         "successful",
-        "failed"
+        "failed",
+        "cash-on-delivery"
       ],
       "default": "not-paid",
       "required": true
