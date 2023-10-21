@@ -948,6 +948,38 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiPromoCodePromoCode extends Schema.CollectionType {
+  collectionName: 'promo_codes';
+  info: {
+    singularName: 'promo-code';
+    pluralName: 'promo-codes';
+    displayName: 'Promo Code';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Discount: Attribute.Integer;
+    Code: Attribute.Password;
+    NumberOfUsage: Attribute.Integer & Attribute.DefaultTo<1>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promo-code.promo-code',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promo-code.promo-code',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSliderImageSliderImage extends Schema.CollectionType {
   collectionName: 'slider_images';
   info: {
@@ -1086,6 +1118,7 @@ declare module '@strapi/strapi' {
       'api::invoice-number.invoice-number': ApiInvoiceNumberInvoiceNumber;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::promo-code.promo-code': ApiPromoCodePromoCode;
       'api::slider-image.slider-image': ApiSliderImageSliderImage;
       'api::subcategory.subcategory': ApiSubcategorySubcategory;
     }

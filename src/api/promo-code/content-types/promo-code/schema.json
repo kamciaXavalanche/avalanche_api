@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promo_codes",
+  "info": {
+    "singularName": "promo-code",
+    "pluralName": "promo-codes",
+    "displayName": "Promo Code"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Discount": {
+      "type": "integer"
+    },
+    "Code": {
+      "type": "password"
+    },
+    "NumberOfUsage": {
+      "default": 1,
+      "type": "integer"
+    }
+  }
+}
