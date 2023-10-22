@@ -4,22 +4,26 @@
   "info": {
     "singularName": "promo-code",
     "pluralName": "promo-codes",
-    "displayName": "Promo Code"
+    "displayName": "Promo Code",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Discount": {
-      "type": "integer"
+    "discount": {
+      "type": "decimal"
     },
-    "Code": {
-      "type": "password"
-    },
-    "NumberOfUsage": {
+    "numberOfUsage": {
       "default": 1,
       "type": "integer"
+    },
+    "codeName": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 8
     }
   }
 }

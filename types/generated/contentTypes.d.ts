@@ -954,14 +954,20 @@ export interface ApiPromoCodePromoCode extends Schema.CollectionType {
     singularName: 'promo-code';
     pluralName: 'promo-codes';
     displayName: 'Promo Code';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Discount: Attribute.Integer;
-    Code: Attribute.Password;
-    NumberOfUsage: Attribute.Integer & Attribute.DefaultTo<1>;
+    discount: Attribute.Decimal;
+    numberOfUsage: Attribute.Integer & Attribute.DefaultTo<1>;
+    codeName: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 8;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
