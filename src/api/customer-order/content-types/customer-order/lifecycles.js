@@ -149,7 +149,7 @@ module.exports = {
             .plugin("email")
             .service("email")
             .send({
-              to: "konr.jankowski@gmail.com",
+              to: "Kamcia_x@icloud.com",
               from: "sklep@levarde.com",
               subject: "Nowe zamówienie",
               text: "Ktoś złożył zamówienie",
@@ -168,7 +168,7 @@ module.exports = {
             .plugin("email")
             .service("email")
             .send({
-              to: "konr.jankowski@gmail.com",
+              to: "Kamcia_x@icloud.com",
               from: "sklep@levarde.com",
               subject: "Nowe zamówienie",
               text: `Nowe zamówienie o statusie ${result.orderStatus} `,
